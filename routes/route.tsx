@@ -6,6 +6,8 @@ import { lazy, Suspense, type JSX } from "react";
 import MainLayoutError from "../pages/Error/MainLayoutError";
 import PlayLayoutError from "../pages/Error/PlayLayoutError";
 import NotFound from "../pages/Error/NotFound";
+import Settings from "../pages/Home/Settings/Settings";
+import HowToPlay from "../pages/Home/HowToPlay/HowToPlay";
 
 //React.lazy 특징
 // 1. 동적 import 사용 -> 번들 크기 줄이고 초기 로딩 속도 개선
@@ -35,10 +37,12 @@ function withErrorBoundayAndSuspense(Component: React.LazyExoticComponent<() => 
 
 const router = createBrowserRouter([
     {
-        element: <MainLayout />,
+        element: <MainLayout/>,
         errorElement: <MainLayoutError />,
         children: [
-            { path: "/", element: <Home /> }
+            { path: "/", element: <Home /> },
+            { path: "/howToPlay", element: <HowToPlay /> },
+            { path: "/settings", element: <Settings /> }
         ]
     },
     {

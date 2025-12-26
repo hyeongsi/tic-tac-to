@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
+import "./MainLayout.css"
 
 export default function MainLayout() {
-    return <div>
-        <div>Main Layout</div>
+    return <div className="container">
         <Outlet />
     </div>;
 }
